@@ -5,4 +5,4 @@
 
 2) password  —— 密码
 
-3) sendkey  server酱Key
+3) sendkey  —— server酱Key
