@@ -49,8 +49,13 @@ async function signIn(authorization) {
 // console.log('定时签到任务已设置，每天8点执行。');
 
 
-console.log('开始执行定时签到任务...');
-const authorization = await login();
-if (authorization) {
-    await signIn(authorization);
-}
+// 10秒后执行签到任务
+setTimeout(async () => {
+    console.log('开始执行定时签到任务...');
+    const authorization = await login();
+    if (authorization) {
+        await signIn(authorization);
+    }
+}, 1000); 
+
+
