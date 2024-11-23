@@ -1,5 +1,6 @@
 const axios = require('axios');
 const schedule = require('node-schedule');
+import {scSend} from 'serverchan-sdk'; 
 
 // 登录函数
 async function login() {
@@ -28,8 +29,10 @@ async function signIn(authorization) {
     try {
         const response = await axios.get(signInUrl, { headers: headers });
         console.log('签到成功:', response.data);
+        return response.data.message;
     } catch (error) {
         console.error('签到失败:', error);
+        return '签到失败';
     }
 }
 
@@ -54,7 +57,9 @@ setTimeout(async () => {
     console.log('开始执行定时签到任务...');
     const authorization = await login();
     if (authorization) {
-        await signIn(authorization);
+        const result = await signIn(authorization);
+        const response = await scSend(process.env.sendkey, '自动签到', 'desp', { tags: result });
+        console.log('Response:', response);
     }
 }, 1000); 
 
