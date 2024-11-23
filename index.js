@@ -33,17 +33,24 @@ async function signIn(authorization) {
     }
 }
 
-// 定时任务
-const rule = new schedule.RecurrenceRule();
-rule.hour = 8;
-rule.minute = 0;
+// // 定时任务
+// const rule = new schedule.RecurrenceRule();
+// rule.hour = 8;
+// rule.minute = 0;
 
-const job = schedule.scheduleJob(rule, async () => {
-    console.log('开始执行定时签到任务...');
-    const authorization = await login();
-    if (authorization) {
-        await signIn(authorization);
-    }
-});
+// const job = schedule.scheduleJob(rule, async () => {
+//     console.log('开始执行定时签到任务...');
+//     const authorization = await login();
+//     if (authorization) {
+//         await signIn(authorization);
+//     }
+// });
 
-console.log('定时签到任务已设置，每天8点执行。');
+// console.log('定时签到任务已设置，每天8点执行。');
+
+
+console.log('开始执行定时签到任务...');
+const authorization = await login();
+if (authorization) {
+    await signIn(authorization);
+}
