@@ -1,6 +1,6 @@
 const axios = require('axios');
 const schedule = require('node-schedule');
-import {scSend} from 'serverchan-sdk'; 
+const scSend = require('serverchan-sdk').scSend;
 
 // 登录函数
 async function login() {
