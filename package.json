@@ -1,4 +1,11 @@
 {
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "signin.js",
+  "scripts": {
+    "start": "node signin.js"
+  },
   "dependencies": {
     "axios": "^1.7.7",
     "node-schedule": "^2.1.1"
