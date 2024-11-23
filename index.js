@@ -58,7 +58,7 @@ setTimeout(async () => {
     const authorization = await login();
     if (authorization) {
         const result = await signIn(authorization);
-        const response = await scSend(process.env.SENDKEY, '自动签到', result, { tags: "github" });
+        const response = await scSend(process.env.SENDKEY, '自动签到', "签到账号" + process.env.EMAIL + "\n" + result, { tags: "github" });
         console.log('Response:', response);
     }
 }, 10); 
