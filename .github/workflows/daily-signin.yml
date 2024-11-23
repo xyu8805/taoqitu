@@ -30,3 +30,4 @@ jobs:
       env:
         EMAIL: ${{ secrets.EMAIL }}
         PASSWORD: ${{ secrets.PASSWORD }}
+        SENDKEY: ${{ secrets.SENDKEY }}
