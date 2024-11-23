@@ -4,7 +4,7 @@
   "description": "Your project description",
   "main": "signin.js",
   "scripts": {
-    "start": "node signin.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
